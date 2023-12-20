@@ -1,0 +1,107 @@
+/* Desktop */
+.tab-titles {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem;
+}
+
+.tab-title {
+    padding: 0.5em 1.5em;
+    margin: 0 0.5em;
+    background-color: #00ACEF;
+    border: 1px solid rgba(0, 62, 87);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.tab-title:hover {
+    background-color: #dcf5ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.tab-title.active {
+    background-color: #c8f0ff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tab-content {
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    margin: 2rem 4rem;
+    padding: 1em;
+    transition: max-height 0.5s ease;    
+}
+
+.accordion {
+    display: none;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0 ease, opacity 0.5s ease;
+}
+
+.content.show {
+    opacity: 1;
+    padding: 1em;
+    max-height: 1000px;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .tab-titles,
+    .tab-content {
+        display: none;
+    }
+
+    .accordion {
+        display: block;
+        margin: 1rem;
+    }
+
+    .accordion-title {
+        background-color: #00ACEF;
+        border: 1px solid rgba(0, 62, 87);
+        padding: 0.5em 1em;
+        margin-bottom: 0.5em;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: left;
+        width: 100%; 
+        box-sizing: border-box;
+    }
+
+    .accordion-title:hover {
+        background-color: #dcf5ff;
+    }
+
+    .accordion-content {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1em;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.1s ease, padding 0.5s ease;
+    }
+
+    .accordion-title.active {
+        background-color: #c8f0ff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .accordion-content.show {
+        padding: 1em; 
+        max-height: 1000px;
+    }
+}
