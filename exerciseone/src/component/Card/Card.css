@@ -1,6 +1,6 @@
 .custom__card {
-    /*width: calc(400px + 25px);*/
     min-width: 400px;
+    height: 600px;
     margin-top: 2rem;
     margin-bottom: 4rem;
     box-sizing: border-box;
@@ -34,6 +34,7 @@
   
 .custom__card .card__body {
     padding: 1rem; 
+    overflow-y: auto;
 }
   
 .custom__card .card__text {
